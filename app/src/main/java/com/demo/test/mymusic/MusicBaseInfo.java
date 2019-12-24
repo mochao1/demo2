@@ -13,7 +13,6 @@ public class MusicBaseInfo implements Serializable{
     private String name;
     private int imageRes;
     private int infoRes;
-
     public MusicBaseInfo() {
     }
 

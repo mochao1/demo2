@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -61,16 +62,17 @@ public class MainActivity extends AppCompatActivity {
                         ARouter.getInstance().build(Config.Text).withSerializable("music", musicBaseInfo).navigation();
                         break;
                     case 1:
+                        Toast.makeText(getApplicationContext(),"正在开发...",Toast.LENGTH_SHORT).show();
                         break;
                     case 2:
+                        Toast.makeText(getApplicationContext(),"正在开发...",Toast.LENGTH_SHORT).show();
                         break;
                     case 3:
+                        ARouter.getInstance().build(Config.WEB).navigation();
                         break;
                     default:
                         break;
                 }
-
-                ARouter.getInstance().build(Config.Text).withString("key", items.get(position)).navigation();
             }
 
             @Override
