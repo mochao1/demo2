@@ -13,14 +13,16 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ * @author Administrator
+ */
 @Route(path = Config.Text)
 public class SimpleTextActivity extends AppCompatActivity {
 
     @BindView(R.id.content_text)
     TextView contentText;
 
-    @Autowired(name = "key")
-    String  contentType;
+    MusicBaseInfo musicBaseInfo;
 
 
     @Override
@@ -28,12 +30,12 @@ public class SimpleTextActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_text);
         ButterKnife.bind(this);
-        ARouter.getInstance().inject(this);
         initData();
     }
 
     private void initData() {
-
+        musicBaseInfo = (MusicBaseInfo) getIntent().getSerializableExtra("music");
+        contentText.setText(getResources().getString(musicBaseInfo.getInfoRes()));
     }
 
     @OnClick(R.id.back_btn)

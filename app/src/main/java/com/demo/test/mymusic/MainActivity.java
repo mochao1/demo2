@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,12 +30,17 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView listContent;
     MenuAdapter menuAdapter;
     List<String> items;
+    @BindView(R.id.text_name)
+    TextView textName;
+
+    MusicBaseInfo musicBaseInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        ARouter.getInstance().inject(this);
         init();
         initData();
     }
@@ -49,7 +56,21 @@ public class MainActivity extends AppCompatActivity {
         menuAdapter.setOnItemClickListener(new MultiItemTypeAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
-                ARouter.getInstance().build(Config.Text).withString("key",items.get(position)).navigation();
+                switch (position) {
+                    case 0:
+                        ARouter.getInstance().build(Config.Text).withSerializable("music", musicBaseInfo).navigation();
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        break;
+                }
+
+                ARouter.getInstance().build(Config.Text).withString("key", items.get(position)).navigation();
             }
 
             @Override
@@ -57,10 +78,13 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        musicBaseInfo = (MusicBaseInfo) getIntent().getSerializableExtra("music");
+        textName.setText(musicBaseInfo.getName());
     }
 
     private void initData() {
-        items.add("介绍");
+        items.add("乐器介绍");
         items.add("试听");
         items.add("观看");
         items.add("帮助");

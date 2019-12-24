@@ -9,4 +9,5 @@ package com.demo.test.mymusic;
 public class Config {
     public static final String Main="/app/MainActivity";
     public static final String Text="/app/SimpleTextActivity";
+    public static final String MUSICLIST="/app/ListMusicActivity";
 }
