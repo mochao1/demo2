@@ -37,15 +37,15 @@ public class ListMusicActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        musicBaseInfos.add(new MusicBaseInfo("吉他", R.mipmap.jita,R.string.jita_text));
-        musicBaseInfos.add(new MusicBaseInfo("电子琴", R.mipmap.dianziqin,R.string.dianziqin));
-        musicBaseInfos.add(new MusicBaseInfo("笛子", R.mipmap.dizi,R.string.dizi));
-        musicBaseInfos.add(new MusicBaseInfo("二胡", R.mipmap.erhu,R.string.erhu));
-        musicBaseInfos.add(new MusicBaseInfo("钢琴", R.mipmap.gangqin,R.string.gangqing));
-        musicBaseInfos.add(new MusicBaseInfo("中国鼓", R.mipmap.gu,R.string.gu));
-        musicBaseInfos.add(new MusicBaseInfo("架子鼓", R.mipmap.jiazigu,R.string.jiazigu));
-        musicBaseInfos.add(new MusicBaseInfo("萨克斯", R.mipmap.sakesi,R.string.sakesi));
-        musicBaseInfos.add(new MusicBaseInfo("小提琴", R.mipmap.xiaotiqin,R.string.xiaotiqin));
+        musicBaseInfos.add(new MusicBaseInfo("吉他", R.mipmap.jita,R.string.jita_text,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo("电子琴", R.mipmap.dianziqin,R.string.dianziqin,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo("笛子", R.mipmap.dizi,R.string.dizi,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo("二胡", R.mipmap.erhu,R.string.erhu,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo("钢琴", R.mipmap.gangqin,R.string.gangqing,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo("中国鼓", R.mipmap.gu,R.string.gu,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo("架子鼓", R.mipmap.jiazigu,R.string.jiazigu,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo("萨克斯", R.mipmap.sakesi,R.string.sakesi,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo("小提琴", R.mipmap.xiaotiqin,R.string.xiaotiqin,"http:/www.baidu.com"));
         musicBaseAdapter.notifyDataSetChanged();
     }
 

@@ -11,4 +11,6 @@ public class Config {
     public static final String Text="/app/SimpleTextActivity";
     public static final String MUSICLIST="/app/ListMusicActivity";
     public static final String WEB="/app/WebActivity";
+    public static final String HELP="/app/HelpActivity";
+    public static final String VIDEO="/app/VideoActivity";
 }

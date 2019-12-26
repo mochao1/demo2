@@ -13,13 +13,15 @@ public class MusicBaseInfo implements Serializable{
     private String name;
     private int imageRes;
     private int infoRes;
+    private String payUrl;
     public MusicBaseInfo() {
     }
 
-    public MusicBaseInfo(String name, int imageRes, int infoRes) {
+    public MusicBaseInfo(String name, int imageRes, int infoRes,String payUrl) {
         this.name = name;
         this.imageRes = imageRes;
         this.infoRes = infoRes;
+        this.payUrl = payUrl;
     }
 
     public String getName() {
@@ -44,5 +46,13 @@ public class MusicBaseInfo implements Serializable{
 
     public void setInfoRes(int infoRes) {
         this.infoRes = infoRes;
+    }
+
+    public String getPayUrl() {
+        return payUrl;
+    }
+
+    public void setPayUrl(String payUrl) {
+        this.payUrl = payUrl;
     }
 }

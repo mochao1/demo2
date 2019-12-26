@@ -1,11 +1,19 @@
 package com.demo.test.mymusic;
 
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +24,7 @@ import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.Inflater;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
     TextView textName;
 
     MusicBaseInfo musicBaseInfo;
+    MediaPlayer mediaPlayer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +55,15 @@ public class MainActivity extends AppCompatActivity {
         ARouter.getInstance().inject(this);
         init();
         initData();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.pause();
+            mediaPlayer.release();
+        }
     }
 
     private void init() {
@@ -62,13 +82,15 @@ public class MainActivity extends AppCompatActivity {
                         ARouter.getInstance().build(Config.Text).withSerializable("music", musicBaseInfo).navigation();
                         break;
                     case 1:
-                        Toast.makeText(getApplicationContext(),"正在开发...",Toast.LENGTH_SHORT).show();
+                        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.lishenmao_sunflower);
+                        mediaPlayer.start();
+                        showVoiceInfo();
                         break;
                     case 2:
-                        Toast.makeText(getApplicationContext(),"正在开发...",Toast.LENGTH_SHORT).show();
+                        ARouter.getInstance().build(Config.VIDEO).withSerializable("music", musicBaseInfo).navigation();
                         break;
                     case 3:
-                        ARouter.getInstance().build(Config.WEB).navigation();
+                        ARouter.getInstance().build(Config.HELP).withSerializable("music", musicBaseInfo).navigation();
                         break;
                     default:
                         break;
@@ -92,4 +114,30 @@ public class MainActivity extends AppCompatActivity {
         items.add("帮助");
         menuAdapter.notifyDataSetChanged();
     }
+
+
+    private void showVoiceInfo() {
+
+        View root = LayoutInflater.from(this).inflate(R.layout.dialog_voice_info, null);
+        TextView textView1 = root.findViewById(R.id.voice_name);
+        TextView textView2 = root.findViewById(R.id.voice_author);
+        textView1.setText("名称:sunflower");
+        textView2.setText("作者:李森茂");
+        final PopupWindow popupWindow = new PopupWindow(this);
+        popupWindow.setContentView(root);
+        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+        popupWindow.showAtLocation(listContent.getChildAt(0), Gravity.CENTER, 0, 0);
+        root.findViewById(R.id.cancel_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mediaPlayer != null) {
+                    mediaPlayer.pause();
+                }
+                popupWindow.dismiss();
+            }
+        });
+
+
+    }
+
 }
