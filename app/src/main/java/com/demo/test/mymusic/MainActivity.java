@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                         ARouter.getInstance().build(Config.Text).withSerializable("music", musicBaseInfo).navigation();
                         break;
                     case 1:
-                        mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.lishenmao_sunflower);
+                        mediaPlayer = MediaPlayer.create(MainActivity.this, musicBaseInfo.getVoiceInfo().getVoiceRes());
                         mediaPlayer.start();
                         showVoiceInfo();
                         break;
@@ -117,12 +117,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void showVoiceInfo() {
-
+        VoiceInfo voiceInfo=musicBaseInfo.getVoiceInfo();
         View root = LayoutInflater.from(this).inflate(R.layout.dialog_voice_info, null);
         TextView textView1 = root.findViewById(R.id.voice_name);
         TextView textView2 = root.findViewById(R.id.voice_author);
-        textView1.setText("名称:sunflower");
-        textView2.setText("作者:李森茂");
+        textView1.setText("名称:"+voiceInfo.getName());
+        textView2.setText("作者:"+voiceInfo.getAuthor());
         final PopupWindow popupWindow = new PopupWindow(this);
         popupWindow.setContentView(root);
         popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
