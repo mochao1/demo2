@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.demo.test.mymusic.MainActivity">
+    <Button
+        android:id="@+id/back_btn"
+        android:text="返回"
+        android:layout_width="100dp"
+        android:layout_height="50dp" />
 
     <TextView
         android:id="@+id/text_name"

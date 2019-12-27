@@ -8,23 +8,34 @@ import java.io.Serializable;
  * description:
  */
 
-public class MusicBaseInfo implements Serializable{
+public class MusicBaseInfo implements Serializable {
 
     private String name;
     private int imageRes;
     private int infoRes;
     private String payUrl;
+    private String videoUrl;
     private VoiceInfo voiceInfo;
 
     public MusicBaseInfo() {
     }
 
-    public MusicBaseInfo(VoiceInfo voiceInfo,String name, int imageRes, int infoRes,String payUrl) {
+    public MusicBaseInfo(VoiceInfo voiceInfo, String name, int imageRes, int infoRes, String videoUrl, String payUrl) {
         this.name = name;
         this.imageRes = imageRes;
         this.infoRes = infoRes;
         this.payUrl = payUrl;
-        this.voiceInfo=voiceInfo;
+        this.voiceInfo = voiceInfo;
+        this.videoUrl = videoUrl;
+    }
+
+
+    public String getVideoUrl() {
+        return videoUrl;
+    }
+
+    public void setVideoUrl(String videoUrl) {
+        this.videoUrl = videoUrl;
     }
 
     public VoiceInfo getVoiceInfo() {

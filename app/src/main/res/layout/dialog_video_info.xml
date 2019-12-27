@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:background="#00f"
+    android:padding="1dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/voice_name"
+        android:gravity="center"
+        android:textColor="#000"
+        android:background="#fff"
+        android:layout_width="300dp"
+        android:layout_height="50dp" />
+
+    <TextView
+        android:id="@+id/voice_author"
+        android:gravity="center"
+        android:textColor="#000"
+        android:background="#fff"
+        android:layout_width="300dp"
+        android:layout_height="50dp" />
+
+    <Button
+        android:id="@+id/cancel_btn"
+        android:text="停止"
+        android:background="#fff"
+        android:layout_width="300dp"
+        android:layout_height="50dp" />
+</LinearLayout>

@@ -7,27 +7,22 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 /**
@@ -87,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                         showVoiceInfo();
                         break;
                     case 2:
-                        ARouter.getInstance().build(Config.VIDEO).withSerializable("music", musicBaseInfo).navigation();
+                        ARouter.getInstance().build(Config.WEB).withSerializable("music", musicBaseInfo).navigation();
                         break;
                     case 3:
                         ARouter.getInstance().build(Config.HELP).withSerializable("music", musicBaseInfo).navigation();
@@ -117,12 +112,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void showVoiceInfo() {
-        VoiceInfo voiceInfo=musicBaseInfo.getVoiceInfo();
+        VoiceInfo voiceInfo = musicBaseInfo.getVoiceInfo();
         View root = LayoutInflater.from(this).inflate(R.layout.dialog_voice_info, null);
         TextView textView1 = root.findViewById(R.id.voice_name);
         TextView textView2 = root.findViewById(R.id.voice_author);
-        textView1.setText("名称:"+voiceInfo.getName());
-        textView2.setText("作者:"+voiceInfo.getAuthor());
+        textView1.setText("名称:" + voiceInfo.getName());
+        textView2.setText("作者:" + voiceInfo.getAuthor());
         final PopupWindow popupWindow = new PopupWindow(this);
         popupWindow.setContentView(root);
         popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
@@ -140,4 +135,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @OnClick(R.id.back_btn)
+    public void onViewClicked() {
+        if (mediaPlayer != null) {
+            mediaPlayer.pause();
+            mediaPlayer.release();
+        }
+        finish();
+    }
 }

@@ -39,23 +39,23 @@ public class ListMusicActivity extends AppCompatActivity {
 
     private void initData() {
         VoiceInfo voiceInfo1=new VoiceInfo(R.raw.lishenmao_sunflower,"sunflower","李森茂");
-        musicBaseInfos.add(new MusicBaseInfo(voiceInfo1,"吉他", R.mipmap.jita,R.string.jita_text,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo(voiceInfo1,"吉他", R.mipmap.jita,R.string.jita_text,"http://www.iqiyi.com/v_19rromes0s.html",""));
         VoiceInfo voiceInfo2=new VoiceInfo(R.raw.dianziqin_sht_sat,"上海滩","SAT轻音乐团");
-        musicBaseInfos.add(new MusicBaseInfo(voiceInfo2,"电子琴", R.mipmap.dianziqin,R.string.dianziqin,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo(voiceInfo2,"电子琴", R.mipmap.dianziqin,R.string.dianziqin,"https://www.iqiyi.com/v_19ruphuyzs.html",""));
         VoiceInfo voiceInfo3=new VoiceInfo(R.raw.dizi_mdzs_hh,"花火","草木 魔道祖师");
-        musicBaseInfos.add(new MusicBaseInfo(voiceInfo3,"笛子", R.mipmap.dizi,R.string.dizi,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo(voiceInfo3,"笛子", R.mipmap.dizi,R.string.dizi,"http://www.iqiyi.com/v_19rrnq9xuo.html",""));
         VoiceInfo voiceInfo4=new VoiceInfo(R.raw.erhu_ab_eqyy,"二泉映月","阿炳");
-        musicBaseInfos.add(new MusicBaseInfo(voiceInfo4,"二胡", R.mipmap.erhu,R.string.erhu,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo(voiceInfo4,"二胡", R.mipmap.erhu,R.string.erhu,"http://www.iqiyi.com/v_19rrnq33es.html",""));
         VoiceInfo voiceInfo5=new VoiceInfo(R.raw.gangqin_zhy_ysgqq,"时间都去哪了","赵海洋");
-        musicBaseInfos.add(new MusicBaseInfo(voiceInfo5,"钢琴", R.mipmap.gangqin,R.string.gangqing,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo(voiceInfo5,"钢琴", R.mipmap.gangqin,R.string.gangqing,"http://v.youku.com/v_show/id_XMTM5MTM1ODk1Mg==.html",""));
         VoiceInfo voiceInfo6=new VoiceInfo(R.raw.gu_qx_lhdg,"气","群星");
-        musicBaseInfos.add(new MusicBaseInfo(voiceInfo6,"中国鼓", R.mipmap.gu,R.string.gu,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo(voiceInfo6,"中国鼓", R.mipmap.gu,R.string.gu,"",""));
         VoiceInfo voiceInfo7=new VoiceInfo(R.raw.jiazigu_ctznl_rxg,"春天在哪里","任小果");
-        musicBaseInfos.add(new MusicBaseInfo(voiceInfo7,"架子鼓", R.mipmap.jiazigu,R.string.jiazigu,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo(voiceInfo7,"架子鼓", R.mipmap.jiazigu,R.string.jiazigu,"http://www.iqiyi.com/v_19rrk91bxc.html",""));
         VoiceInfo voiceInfo8=new VoiceInfo(R.raw.sakesi_hj_kg,"回家","Kenny G");
-        musicBaseInfos.add(new MusicBaseInfo(voiceInfo8,"萨克斯", R.mipmap.sakesi,R.string.sakesi,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo(voiceInfo8,"萨克斯", R.mipmap.sakesi,R.string.sakesi,"https://www.iqiyi.com/v_19rr9azdcc.html",""));
         VoiceInfo voiceInfo9=new VoiceInfo(R.raw.xiaotiqin_fd_xyq,"爱的梦","Frantisek Drdla");
-        musicBaseInfos.add(new MusicBaseInfo(voiceInfo9,"小提琴", R.mipmap.xiaotiqin,R.string.xiaotiqin,"http:/www.baidu.com"));
+        musicBaseInfos.add(new MusicBaseInfo(voiceInfo9,"小提琴", R.mipmap.xiaotiqin,R.string.xiaotiqin,"http://www.iqiyi.com/w_19rtnha32x.html?list=19rrlcgebi",""));
         musicBaseAdapter.notifyDataSetChanged();
     }
 
