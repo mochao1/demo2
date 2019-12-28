@@ -1,6 +1,7 @@
 package com.demo.test.mymusic;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author Messi.Mo
@@ -16,19 +17,28 @@ public class MusicBaseInfo implements Serializable {
     private String payUrl;
     private String videoUrl;
     private VoiceInfo voiceInfo;
+    private List<TestInfo> testInfo;
 
     public MusicBaseInfo() {
     }
 
-    public MusicBaseInfo(VoiceInfo voiceInfo, String name, int imageRes, int infoRes, String videoUrl, String payUrl) {
+    public MusicBaseInfo(List<TestInfo> testInfo,VoiceInfo voiceInfo, String name, int imageRes, int infoRes, String videoUrl, String payUrl) {
         this.name = name;
         this.imageRes = imageRes;
         this.infoRes = infoRes;
         this.payUrl = payUrl;
         this.voiceInfo = voiceInfo;
         this.videoUrl = videoUrl;
+        this.testInfo = testInfo;
     }
 
+    public List<TestInfo> getTestInfo() {
+        return testInfo;
+    }
+
+    public void setTestInfo(List<TestInfo> testInfo) {
+        this.testInfo = testInfo;
+    }
 
     public String getVideoUrl() {
         return videoUrl;

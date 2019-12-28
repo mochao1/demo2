@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/title_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/text_answer"
+            android:layout_width="50dp"
+            android:layout_height="40dp" />
+
+        <Button
+            android:id="@+id/btn_answer"
+            android:text="答案"
+            android:layout_width="100dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/option_ab"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/title_ll"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/option_a"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="2dp"
+            android:background="@color/colorPrimary"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:layout_marginStart="2dp"
+            android:id="@+id/option_b"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider_view"
+        android:layout_below="@id/option_ab"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="2dp"/>
+
+    <LinearLayout
+        android:id="@+id/option_cd"
+        android:layout_below="@id/divider_view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/option_c"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="match_parent" />
+        <View
+            android:layout_width="2dp"
+            android:background="@color/colorPrimary"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:layout_marginStart="2dp"
+            android:id="@+id/option_d"
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</RelativeLayout>
