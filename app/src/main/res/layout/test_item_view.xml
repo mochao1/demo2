@@ -23,7 +23,8 @@
 
         <Button
             android:id="@+id/btn_answer"
-            android:text="答案"
+            android:background="@null"
+            android:text="查看答案"
             android:layout_width="100dp"
             android:layout_height="40dp" />
     </LinearLayout>

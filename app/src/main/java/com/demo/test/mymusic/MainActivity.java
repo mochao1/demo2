@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     MusicBaseInfo musicBaseInfo;
     MediaPlayer mediaPlayer;
-
+    PopupWindow popupWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (popupWindow != null) {
+            popupWindow.dismiss();
+        }
         if (mediaPlayer != null) {
             mediaPlayer.pause();
             mediaPlayer.release();
@@ -118,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         TextView textView2 = root.findViewById(R.id.voice_author);
         textView1.setText("名称:" + voiceInfo.getName());
         textView2.setText("作者:" + voiceInfo.getAuthor());
-        final PopupWindow popupWindow = new PopupWindow(this);
+        popupWindow = new PopupWindow(this);
         popupWindow.setContentView(root);
         popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
         popupWindow.showAtLocation(listContent.getChildAt(0), Gravity.CENTER, 0, 0);
@@ -137,10 +140,6 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.back_btn)
     public void onViewClicked() {
-        if (mediaPlayer != null) {
-            mediaPlayer.pause();
-            mediaPlayer.release();
-        }
         finish();
     }
 }

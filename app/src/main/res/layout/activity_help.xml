@@ -5,16 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@mipmap/bg"
     tools:context="com.demo.test.mymusic.HelpActivity">
 <Button
     android:id="@+id/back_btn"
-    android:text="返回"
-    android:layout_width="100dp"
-    android:layout_height="50dp" />
+    android:background="@mipmap/back_icon"
+    android:layout_width="40dp"
+    android:layout_height="40dp" />
 
 
 
     <LinearLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView

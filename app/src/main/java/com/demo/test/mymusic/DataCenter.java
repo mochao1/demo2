@@ -13,6 +13,143 @@ public class DataCenter {
 
 
     /**
+     * @return 琵琶
+     */
+    public static List<TestInfo> getpipa() {
+        List<TestInfo> testInfos = new ArrayList<>();
+        List<String> options = new ArrayList<>();
+        options.add("中提琴");
+        options.add("小提琴");
+        options.add("低音提琴");
+        options.add("竖琴");
+        TestInfo testInfo = new TestInfo();
+        testInfo.setCorrectValue("D");
+        testInfo.setTitleName("下列哪一种乐器不属于弓弦类乐器？");
+        testInfo.setOptions(options);
+        testInfos.add(testInfo);
+
+        TestInfo testInfo2 = new TestInfo();
+        List<String> options2 = new ArrayList<>();
+        options2.add("钢琴");
+        options2.add("小提琴");
+        options2.add("中提琴");
+        options2.add("大提琴");
+        testInfo2.setCorrectValue("A");
+        testInfo2.setTitleName("弦乐四重奏不包括？");
+        testInfo2.setOptions(options2);
+        testInfos.add(testInfo2);
+
+        TestInfo testInfo3 = new TestInfo();
+        List<String> options3 = new ArrayList<>();
+        options3.add("琵琶");
+        options3.add("二胡");
+        options3.add("古筝");
+        options3.add("箫");
+        testInfo3.setCorrectValue("A");
+        testInfo3.setTitleName("《孔雀东南飞》是什么乐器独奏？");
+        testInfo3.setOptions(options3);
+        testInfos.add(testInfo3);
+
+        TestInfo testInfo4 = new TestInfo();
+        List<String> options4 = new ArrayList<>();
+        options4.add("响琶");
+        options4.add("月琶");
+        options4.add("高音琵琶");
+        options4.add("电琵琶");
+        testInfo4.setCorrectValue("ABCD");
+        testInfo4.setTitleName("琵琶种类可分为哪几种？");
+        testInfo4.setOptions(options4);
+        testInfos.add(testInfo4);
+
+        return testInfos;
+    }
+
+
+    /**
+     * @return 古筝
+     */
+    public static List<TestInfo> getguzheng() {
+        List<TestInfo> testInfos = new ArrayList<>();
+        List<String> options = new ArrayList<>();
+        options.add("7");
+        options.add("8");
+        options.add("9");
+        options.add("10");
+        TestInfo testInfo = new TestInfo();
+        testInfo.setCorrectValue("D");
+        testInfo.setTitleName("中国民族管弦学会编的教材将古筝考级分为几级？");
+        testInfo.setOptions(options);
+        testInfos.add(testInfo);
+
+        TestInfo testInfo2 = new TestInfo();
+        List<String> options2 = new ArrayList<>();
+        options2.add("短笛");
+        options2.add("长笛");
+        options2.add("古筝");
+        options2.add("钢琴");
+        testInfo2.setCorrectValue("C");
+        testInfo2.setTitleName("《青花瓷》里面演奏乐器是什么？");
+        testInfo2.setOptions(options2);
+        testInfos.add(testInfo2);
+
+        TestInfo testInfo3 = new TestInfo();
+        List<String> options3 = new ArrayList<>();
+        options3.add("十五弦琴");
+        options3.add("十六弦琴");
+        options3.add("十七弦琴");
+        options3.add("十八弦琴");
+        testInfo3.setCorrectValue("BCD");
+        testInfo3.setTitleName("古筝分为哪几弦琴？");
+        testInfo3.setOptions(options3);
+        testInfos.add(testInfo3);
+
+        return testInfos;
+    }
+
+
+    /**
+     * @return 箫
+     */
+    public static List<TestInfo> getxiao() {
+        List<TestInfo> testInfos = new ArrayList<>();
+        List<String> options = new ArrayList<>();
+        options.add("六孔");
+        options.add("七孔");
+        options.add("八孔");
+        options.add("九孔");
+        TestInfo testInfo = new TestInfo();
+        testInfo.setCorrectValue("AC");
+        testInfo.setTitleName("箫有那几孔？");
+        testInfo.setOptions(options);
+        testInfos.add(testInfo);
+
+        TestInfo testInfo2 = new TestInfo();
+        List<String> options2 = new ArrayList<>();
+        options2.add("远古时期");
+        options2.add("明朝");
+        options2.add("汉朝");
+        options2.add("三国时期");
+        testInfo2.setCorrectValue("A");
+        testInfo2.setTitleName("箫最远可追溯到哪个时期？");
+        testInfo2.setOptions(options2);
+        testInfos.add(testInfo2);
+
+        TestInfo testInfo3 = new TestInfo();
+        List<String> options3 = new ArrayList<>();
+        options3.add("箫是横吹，笛子是竖吹");
+        options3.add("笛子是横吹，箫是竖吹");
+        options3.add("");
+        options3.add("");
+        testInfo3.setCorrectValue("B");
+        testInfo3.setTitleName("箫和笛子的区别？");
+        testInfo3.setOptions(options3);
+        testInfos.add(testInfo3);
+
+        return testInfos;
+    }
+
+
+    /**
      * @return 吉他
      */
     public static List<TestInfo> getjita() {
@@ -167,6 +304,28 @@ public class DataCenter {
         testInfo3.setOptions(options3);
         testInfos.add(testInfo3);
 
+        TestInfo testInfo4 = new TestInfo();
+        List<String> options4 = new ArrayList<>();
+        options4.add("金");
+        options4.add("铜");
+        options4.add("木");
+        options4.add("银");
+        testInfo4.setCorrectValue("C");
+        testInfo4.setTitleName("早期长笛是什么材质做成的？");
+        testInfo4.setOptions(options4);
+        testInfos.add(testInfo4);
+
+        TestInfo testInfo5 = new TestInfo();
+        List<String> options5 = new ArrayList<>();
+        options5.add("长笛");
+        options5.add("小号");
+        options5.add("圆号");
+        options5.add("长号");
+        testInfo5.setCorrectValue("C");
+        testInfo5.setTitleName("下列哪种乐器属于木管组？");
+        testInfo5.setOptions(options5);
+        testInfos.add(testInfo5);
+
         return testInfos;
     }
 
@@ -235,13 +394,13 @@ public class DataCenter {
     public static List<TestInfo> getzhongguogu() {
         List<TestInfo> testInfos = new ArrayList<>();
         List<String> options = new ArrayList<>();
-        options.add("");
-        options.add("");
-        options.add("");
-        options.add("");
+        options.add("定音鼓");
+        options.add("钟琴");
+        options.add("木琴");
+        options.add("三角铁");
         TestInfo testInfo = new TestInfo();
-        testInfo.setCorrectValue("B");
-        testInfo.setTitleName("?");
+        testInfo.setCorrectValue("D");
+        testInfo.setTitleName("下列打击乐器中不能发出固定音高的乐器是");
         testInfo.setOptions(options);
         testInfos.add(testInfo);
 

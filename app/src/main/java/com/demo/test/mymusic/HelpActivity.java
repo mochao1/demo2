@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 
+import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
